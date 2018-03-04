@@ -22,15 +22,14 @@ public class Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && camera.orthographicSize <= 15.0f)
         {
-            camera.orthographicSize += 0.1F;
+            camera.orthographicSize += 1.0F;
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && camera.orthographicSize >= 6.0f)
         {
-            camera.orthographicSize -= 0.1F;
+            camera.orthographicSize -= 1.0F;
         }
 
         if ((int)Input.mousePosition.x >= camera.pixelWidth)
