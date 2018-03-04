@@ -33,6 +33,27 @@ public class Cam : MonoBehaviour
             camera.orthographicSize -= 0.1F;
         }
 
+        if ((int)Input.mousePosition.x >= camera.pixelWidth)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + 10.0F, transform.position.y, transform.position.z), Time.deltaTime * 5);
+        }
+
+        if ((int)Input.mousePosition.x <= 0 && (int)Input.mousePosition.x <= camera.pixelWidth)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 10.0F, transform.position.y, transform.position.z), Time.deltaTime * 5);
+        }
+
+        if ((int)Input.mousePosition.y >= camera.pixelHeight)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 10.0F, transform.position.z), Time.deltaTime * 5);
+        }
+
+        if ((int)Input.mousePosition.y <= 0 && (int)Input.mousePosition.y <= camera.pixelHeight)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y - 10.0F, transform.position.z), Time.deltaTime * 5);
+        }
+
+
         //if (Input.GetKeyDown(KeyCode.Mouse1))
         //{
         //    flag = true;
@@ -60,25 +81,5 @@ public class Cam : MonoBehaviour
         //    lastMousePosition_X = (int)Input.mousePosition.x;
         //    lastMousePosition_Y = (int)Input.mousePosition.y;
         //}
-
-        if (Input.GetKey(KeyCode.Keypad4))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 1.0F, transform.position.y, transform.position.z), Time.deltaTime*5);
-        }
-
-        if (Input.GetKey(KeyCode.Keypad6))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + 1.0F, transform.position.y, transform.position.z), Time.deltaTime*5);
-        }
-
-        if (Input.GetKey(KeyCode.Keypad8))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 1.0F, transform.position.z), Time.deltaTime*5);
-        }
-
-        if (Input.GetKey(KeyCode.Keypad2))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y - 1.0F, transform.position.z), Time.deltaTime*5);
-        }
     }
 }
