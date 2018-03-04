@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fire: {fileID: 1708345665136144, guid: 59dddb072c89a1441a646c1cd35f5056, type: 2}
-  transform_Krip: {fileID: 567746394}
+  transform_Krip: {fileID: 612269016}
   transform_Player: {fileID: 567746394}
 --- !u!50 &1349282659
 Rigidbody2D:
